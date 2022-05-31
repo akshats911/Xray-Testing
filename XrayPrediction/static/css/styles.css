@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black2: #272727;
+    --blue2: #4F98CA;
+    --green2: #50D890;
+    --white2: #EFFFFB;
+}
+
+body {
+  background-color: #0A1931;
+}
+
+header{
+    width: 100%;
+    background-color: inherit;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition: background-color .5s ease;
+    z-index: 1000;
+}
+
+.menu-button:hover {
+    cursor: pointer;
+}
+
+.menu-button i{
+  color: #fff;
+  font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.container{
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255,255,255,.05);
+    transition: height .5s ease;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #E83C38;
+    font-size: 1.6rem;
+}
+
+.nav .logo{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    margin-right: auto;
+    margin-left: 5rem;
+    padding-left: 450px;
+    
+}
+
+.nav-link{
+    margin: 0 2rem;
+    position: relative;
+}
+
+.nav-link::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s ease;
+}
+
+.nav-link:hover::after{
+    transform: scaleX(1);
+}
+
+.shrink{
+    background-color: white;
+}
+
+.hero{
+    color: #80D4DF;
+}
+
+
+.hero .container .heading span{
+    font-size: 90px;
+    background: radial-gradient(var(--blue2), var(--white2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us{
+    background: linear-gradient(to right, #0A1931 0%, #0A1931 20%, #4F98CA 30%, #4F98CA 98%, #0A1931 98%,#0A1931 100% );
+}
+
+.about-us .about .container.right{
+    color: white;
+}
