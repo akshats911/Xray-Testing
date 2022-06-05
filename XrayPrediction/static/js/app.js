@@ -59,14 +59,9 @@ var cursorScale = document.querySelectorAll(".cursor-scale");
 var mouseX;
 var mouseY;
 
-window.addEventListener("mousemove", function(e){
-    mouseX=e.clientX;
-    mouseY=e.clientY;
-    // console.log(mouseX, mouseY);
-});
-
 gsap.to({},0.010,{
     repeat: -1,
+
     onRepeat: function(){
         gsap.set(cursor,{
             css: {
@@ -77,5 +72,29 @@ gsap.to({},0.010,{
     }
 });
 
+window.addEventListener("mousemove", function(e){
+    mouseX=e.clientX;
+    mouseY=e.clientY;
+    // console.log(mouseX, mouseY);
+});
+
+cursorScale.forEach(link=>{
+    link.addEventListener('mouseleave',()=>{
+        cursor.classList.remove('grow');
+        cursor.classList.remove('grow-small');
+    });
+    link.addEventListener('mousemove',()=>{
+        cursor.classList.add('grow');
+        if (link.classList.contains('small')){
+            cursor.classList.remove('grow');
+            cursor.classList.add('grow-small');
+
+        }
+    })
+})
+
 // console.log(mouseX);
 // console.log(mouseY);
+
+var scene = document.getElementById('scene');
+var parallax = new Parallax(scene);

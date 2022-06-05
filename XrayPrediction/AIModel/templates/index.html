@@ -1,24 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/c457cbbb92.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <!-- <link rel="stylesheet" href="../static/css/styles.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="D:\CHECKED IT\Xray-Testing\XrayPrediction\static\css\styles.css"> -->
     <title>Document</title>
 </head>
 
 <body>
-    
-    
+
+
     <!-- Navbar -->
     <header>
         <nav>
@@ -36,7 +38,7 @@
         </nav>
 
         <div class="cursor"></div>
-        
+
         <div class="menu">
             <div class="button" onclick="togglec()"><i class="fa-solid fa-xmark"></i></div>
             <ul class="ul">
@@ -48,8 +50,8 @@
                     <div class="bg2 bg"></div>
                     <div class="bg3 bg"></div>
                     <div class="bg4 bg"></div> -->
-                </ul>
-                <div class="social">
+            </ul>
+            <div class="social">
                 <ul>
                     <li class="social-li"><a href="#">Facebook</a></li>
                     <li class="social-li"><a href="#">Instagram</a></li>
@@ -67,11 +69,36 @@
                 <h1 class="heading">Have you <br><span>Checked It?</span></h1>
             </div>
             <div>
-                <h2>If not <a href=""> CHECK NOW!</a></h2>
+                <h2>If not <a href=""><span>CHECK NOW!</span></a></h2>
 
             </div>
         </div>
     </section>
+
+    <div class="juice">
+        <img src="./img/juice.png" alt="">
+    </div>
+
+    <div class="leaves">
+        <ul id="scene">
+            <li class="layer" data-depth="-.1">
+                <img src="../static/media/landing page icons/blood-test.png" alt="">
+                <img src="{% static 'images/landing page icons/blood-test.png' %}" alt="">
+            </li>
+            <li class="layer" data-depth="-.3">
+                <img src="../static/media/landing page icons/coronavirus.png" alt="">
+            </li>
+            <li class="layer" data-depth="-1.5">
+                <img src="../static/media/landing page icons/stethoscope.png" alt="">
+            </li>
+            <li class="layer" data-depth=".1">
+                <img src="../static/media/landing page icons/x-rays.png" alt="">
+            </li>
+            <li class="layer" data-depth=".3">
+                <img src="https://cdn-icons-png.flaticon.com/512/4706/4706927.png" alt="">
+            </li>
+        </ul>
+    </div>
 
     <section class="about-us-1 py-5">
         <div class="container about d-flex justify-content-evenly align-items-center">
@@ -92,18 +119,16 @@
 
     <section class="about-us-2">
         <div class="container about d-flex justify-content-evenly align-items-center">
-            
+
             <div class="container left p-3">
                 <h2>THE COV BOT 3000</h2>
-                <h4>Its a revolution, and you  are a part of it.</h4>
+                <h4>Its a revolution, and you are a part of it.</h4>
                 <p>Boasting a result accuraccy of 99.99%, the Cov Bot only needs an X-ray scan of lungs to check for
                     Covid 19. It is fast, reliable and of course, cheap because we at checkedit believe that access to
                     the latest technologies in the medical world should never be seen as a luxury.</p>
             </div>
             <div class="container right">
-                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_slipwrv0.json"
-                    background="transparent" speed="1" style="width: 600px; height: 300px;" loop autoplay>
-                </lottie-player>
+                <img class="cursor-scale" src="../static/media/skeleton.png" alt="">
             </div>
         </div>
     </section>
@@ -118,6 +143,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="../static/js/app.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

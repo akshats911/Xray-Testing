@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/secondary.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h1>POSTS</h1>
+    <ul>
+        {% for post in object_list %}
+        <li>{{post.title}} by {{post.author}} <br>
+            {{post.body}}
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

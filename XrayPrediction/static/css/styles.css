@@ -1,12 +1,12 @@
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --black2: #272727;
     --blue2: #4F98CA;
     --green2: #50D890;
@@ -14,10 +14,10 @@
 }
 
 body {
-  background-color: #0A1931;
+    background-color: var(--black2);
 }
 
-header{
+header {
     width: 100%;
     background-color: inherit;
     position: sticky;
@@ -40,11 +40,12 @@ header{
     cursor: pointer;
 }
 
-.menu-button i{
-  color: #fff;
-  font-size: 2rem;
+.menu-button i {
+    color: #fff;
+    font-size: 2rem;
 }
-.menu{
+
+.menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,14 +55,14 @@ header{
     transform: translateX(-100%);
 }
 
-.open_button{
+.open_button {
     text-decoration: none;
-    color: #fff;
+    color: ;
     font-size: 2rem;
     cursor: pointer;
 }
 
-.button{
+.button {
     position: absolute;
     top: 50px;
     right: 100px;
@@ -73,11 +74,11 @@ header{
     cursor: pointer;
 }
 
-.menu .button{
+.menu .button {
     color: white;
 }
 
-.ul{
+.ul {
     list-style: none;
     position: absolute;
     left: 20%;
@@ -89,12 +90,12 @@ header{
     flex-direction: column;
 }
 
-.ul li{
+.ul li {
     margin: 20px 0;
     z-index: 2;
 }
 
-.ul li a{
+.ul li a {
     text-decoration: none;
     color: white;
     transition: 2s;
@@ -104,7 +105,7 @@ header{
     mix-blend-mode: difference;
 }
 
-.social{
+.social {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -112,16 +113,17 @@ header{
     width: 100%;
 }
 
-.social ul{
+.social ul {
     margin-left: 50px;
     display: flex;
 }
-.social ul li{
+
+.social ul li {
     margin: 0 10px;
     z-index: 100;
 }
 
-.social ul li a{
+.social ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -157,24 +159,24 @@ header{
     font-size: 1rem;
 }
  */
-.container2{
+.container2 {
     width: 100%;
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
-.nav{
+.nav {
     width: 100%;
     height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid rgba(255,255,255,.05);
+    border-bottom: 2px solid rgba(255, 255, 255, .05);
     transition: height .5s ease;
 }
 
-.nav_container{
+.nav_container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -212,11 +214,11 @@ header{
     transform: scaleX(1);
 } */
 
-.shrink{
+.shrink {
     background-color: inherit;
 }
 
-.hero{
+.hero {
     color: #80D4DF;
     min-height: 70vh;
     display: flex;
@@ -225,7 +227,7 @@ header{
 }
 
 
-.hero .container .heading span{
+.hero .container .heading span {
     font-size: 90px;
     background: radial-gradient(var(--blue2), var(--white2));
     background-clip: text;
@@ -233,25 +235,89 @@ header{
     -webkit-text-fill-color: transparent;
 }
 
-.about-us-1{
+.about-us-1 {
     margin-top: 50px;
-    background: linear-gradient(to right, #0A1931 0%, #0A1931 20%, #4F98CA 30%, #4F98CA 98%, #0A1931 98%,#0A1931 100% );
-}
-.about-us-2{
-    background: linear-gradient(to left, #0A1931 0%, #0A1931 20%, #4F98CA 30%, #4F98CA 98%, #0A1931 98%,#0A1931 100% );
+    background: linear-gradient(to right, #0A1931 0%, #0A1931 20%, #4F98CA 30%, #4F98CA 98%, #0A1931 98%, #0A1931 100%);
 }
 
-.about-us .about .container.right{
+.about-us-2 {
+    background: linear-gradient(to left, #0A1931 0%, #0A1931 20%, #4F98CA 30%, #4F98CA 98%, #0A1931 98%, #0A1931 100%);
+}
+
+.about-us .about .container.right {
     color: white;
 }
 
 
-.cursor{
+.cursor {
     position: fixed;
     width: 40px;
     height: 40px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     border-radius: 50%;
     margin-left: -20px;
     margin-top: -20px;
+    transition: transform .3s ease;
+    pointer-events: none;
+    transform-origin: center center;
+    z-index: 1000;
+
+}
+
+.cursor-scale {
+    cursor: none;
+    transition: all 1s ease-in-out;
+}
+
+
+.grow,
+.grow-small {
+    transform: scale(10);
+    background: white;
+    /* opacity: 0.3; */
+    background-image: url(https://cdn-icons-png.flaticon.com/512/3324/3324975.png);
+    mix-blend-mode: normal;
+    border: none;
+}
+
+.grow-small {
+    transform: scale(2.5);
+}
+
+.leaves {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+}
+
+.leaves .layer:nth-child(1) {
+    top: -100px !important;
+    left: -480px !important;
+}
+
+.leaves .layer:nth-child(2) {
+    top: 10px !important;
+    left: 160px !important;
+}
+
+.leaves .layer:nth-child(3) {
+    top: -300px !important;
+    left: 160px !important;
+}
+
+.leaves .layer:nth-child(4) {
+    top: -30px !important;
+    left: 320px !important;
+}
+
+.leaves .layer:nth-child(5) {
+    top: 200px !important;
+    left: -320px !important;
+}
+
+.layer img {
+    width: 70px;
 }
